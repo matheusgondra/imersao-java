@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -12,8 +13,8 @@ public class RequestController {
 			var request = HttpRequest.newBuilder(endereco).GET().build();
 			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 			return response.body();
-		} catch (Exception e) {
-			throw new Error("Erro ao realização a requisição");
+		} catch (IOException | InterruptedException ex) {
+			throw new RuntimeException(ex);
 		}
 	}
 }

@@ -24,7 +24,7 @@ public class StickerGenerator {
 		graphics.drawImage(originalImage, 0, 0, 512, 512, null);
 
 		// Configurar a fonte
-		var font = new Font("Comic Sans MS", Font.BOLD, 32);
+		var font = new Font("Comic Sans MS", Font.BOLD, 64);
 		graphics.setFont(font);
 		
 		// Escrever uma frase na nova imagem
